@@ -25,19 +25,11 @@ jobs:
     - name: clone develop branche of integration repo
       run: | 
         git clone https://franklinfokodjomou-eaton:${{ secrets.TOKEN }}@github.com/etn-electrical/etn-gwci-integrationtests.git -b develop
-        ls -la
         cd etn-gwci-integrationtests/ansible
-        ls -la
-        
-      
-    - name: Set up Python
-      uses: actions/setup-python@v2
-      with:
-        python-version: '3.x'
 
     - name: Install Ansible
       run: |
-        python -m pip install --upgrade pip
+        python3 -m pip install --upgrade pip
         pip install ansible
 
     - name: Run Ansible Playbook Clean
