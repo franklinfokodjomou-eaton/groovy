@@ -33,11 +33,11 @@ jobs:
         ansible --version
 
     - name: Run Ansible Playbook Clean
-      run: ansible-playbook etn-electrical/etn-gwci-integrationtests/ansible/clean-device-simulator-playbook.yml
+      run: ansible-playbook etn-gwci-integrationtests/ansible/clean-device-simulator-playbook.yml
       env:
         ANSIBLE_HOST_KEY_CHECKING: 'false'
 
     - name: Run Ansible Playbook Deploy
-      run: ansible-playbook etn-electrical/etn-gwci-integrationtests/ansible/deploy-device-simulator-playbook.yml
+      run: ansible-playbook etn-gwci-integrationtests/ansible/deploy-device-simulator-playbook.yml
       env:
         ANSIBLE_HOST_KEY_CHECKING: 'false'
