@@ -3,7 +3,7 @@ name: Run Ansible Playbook
 on:
   push:
     branches:
-      - deploy-simulator-on-ci
+      - main
   pull_request:
     branches:
       - main
