@@ -18,7 +18,7 @@ jobs:
 
     - name: clone develop branche of integration repo
       run: | 
-        git clone https://franklinfokodjomou-eaton:${{ secrets.TOKEN }}@github.com/etn-electrical/etn-gwci-integrationtests.git -b develop
+        git@github.com:etn-electrical/etn-gwci-integrationtests.git
         cd ansible
       
     - name: Set up Python
