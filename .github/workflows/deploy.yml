@@ -18,9 +18,9 @@ jobs:
 
     - name: pre task
       run: |
-        cat ~/.ssh/id_ed25519.pub
-        ls -la ~/.ssh
         ls -la
+        ls -la ~/.ssh
+        pwd
 
     - name: clone develop branche of integration repo
       run: | 
