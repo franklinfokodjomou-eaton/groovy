@@ -25,7 +25,6 @@ jobs:
     - name: clone develop branche of integration repo
       run: | 
         git clone https://franklinfokodjomou-eaton:${{ secrets.TOKEN }}@github.com/etn-electrical/etn-gwci-integrationtests.git -b develop
-        cd etn-gwci-integrationtests/ansible
 
     - name: Install Ansible
       run: |
@@ -33,13 +32,11 @@ jobs:
         pip install ansible
 
     - name: Run Ansible Playbook Clean
-      run: |
-        ls -la
-        ansible-playbook clean-device-simulator-playbook.yml
+      run: ansible-playbook etn-electrical/etn-gwci-integrationtests/ansible/clean-device-simulator-playbook.yml
       env:
         ANSIBLE_HOST_KEY_CHECKING: 'false'
 
     - name: Run Ansible Playbook Deploy
-      run: ansible-playbook deploy-device-simulator-playbook.yml
+      run: ansible-playbook etn-electrical/etn-gwci-integrationtests/ansible/deploy-device-simulator-playbook.yml
       env:
         ANSIBLE_HOST_KEY_CHECKING: 'false'
