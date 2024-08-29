@@ -16,14 +16,9 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v2
 
-    - name: pre task
-      run: |
-        echo "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIHv8omJ/AYHDnFuVlha/LXRRjZwiRWZcqaYHetHhy8OK FranklinFokoDjomou@eaton.com" >> ~/.ssh/id_ed25519.pub
-        cat ~/.ssh/id_ed25519.pub
-
     - name: clone develop branche of integration repo
       run: | 
-        git clone -b develop https://github.com/etn-electrical/etn-gwci-integrationtests.git
+        git clone https://franklinfokodjomou-eaton:${secret.TOKEN}@github.com/etn-electrical/etn-gwci-integrationtests.git -b develop
         cd ansible
       
     - name: Set up Python
