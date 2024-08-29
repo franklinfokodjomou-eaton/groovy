@@ -33,7 +33,9 @@ jobs:
         pip install ansible
 
     - name: Run Ansible Playbook Clean
-      run: ansible-playbook clean-device-simulator-playbook.yml
+      run: |
+        ls -la
+        ansible-playbook clean-device-simulator-playbook.yml
       env:
         ANSIBLE_HOST_KEY_CHECKING: 'false'
 
